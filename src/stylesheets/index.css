@@ -2,13 +2,17 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-}
-
-body {
+	background: black;
 	font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-.main {
+#editor {
+	position: static;
+	width: 500px;
+	height: 500px;
+}
+
+.container {
 	position: absolute;
 	width: 500px;
 	height: 250px;
@@ -19,7 +23,7 @@ body {
 	text-align: center;
 }
 
-.main h1 {
+.container h1 {
 	font-size: 60px;
 	font-weight: 100;
 	margin: 0;

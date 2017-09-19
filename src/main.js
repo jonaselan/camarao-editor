@@ -9,7 +9,9 @@ let mainWindow;
 function createMainWindow() {
 	const win = new BrowserWindow({
 		width: 600,
-		height: 400
+		height: 400,
+		x: 200,
+		y: 200	
 	});
 
 	win.loadURL(`file://${__dirname}/views/index.html`);
