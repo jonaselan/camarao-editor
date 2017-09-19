@@ -1,7 +1,4 @@
-'use strict';
-const electron = require('electron');
-
-const app = electron.app;
+const {app, globalShortcut, BrowserWindow } = require('electron');
 
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
@@ -9,14 +6,8 @@ require('electron-debug')();
 // prevent window being garbage collected
 let mainWindow;
 
-function onClosed() {
-	// dereference the window
-	// for multiple windows store them in an array
-	mainWindow = null;
-}
-
 function createMainWindow() {
-	const win = new electron.BrowserWindow({
+	const win = new BrowserWindow({
 		width: 600,
 		height: 400
 	});
@@ -24,7 +15,21 @@ function createMainWindow() {
 	win.loadURL(`file://${__dirname}/views/index.html`);
 	win.on('closed', onClosed);
 
+	globalShortcut.register('CommandOrControl+1', () => {
+		win.isMaximized() ? win.unmaximize() : win.maximize()
+	})
+
+	globalShortcut.register('Alt+1', () => {
+		console.log('Alt key pressed');
+	})
+
 	return win;
+}
+
+function onClosed() {
+	// dereference the window
+	// for multiple windows store them in an array
+	mainWindow = null;
 }
 
 app.on('window-all-closed', () => {
