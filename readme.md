@@ -1,29 +1,28 @@
-# camarao
+# Camarao-editor
 
-> My pioneering app
+This is a desktop app made for work with [Potigol](https://github.com/potigol/Potigol), the modern programming language for beginners. It's built with [Electron](http://electron.atom.io) API with [ACE](https://github.com/ajaxorg/ace). This app works on Windows, macOS and Linux operating systems.
 
+---
 
-## Dev
+## Using
 
-```
+You'll need [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com/) installed on your computer in order to build this app.
+
+```bash
+$ git clone https://github.com/jonaselan/camarao-editor
+$ cd YOUR-DIRECTORY
 $ npm install
-```
-
-### Run
-
-```
 $ npm start
 ```
 
-### Build
+For easier developing you can launch the app in fullscreen with DevTools open:
 
+```bash
+$ npm run dev
 ```
-$ npm run build
-```
 
-Builds the app for macOS, Linux, and Windows, using [electron-packager](https://github.com/electron-userland/electron-packager).
+## TODO
 
-
-## License
-
-MIT © [jonaselan](https://github.com/jonaselan)
+- Make the menu for open/save files
+- Create tab option
+- Highlight for Potigol

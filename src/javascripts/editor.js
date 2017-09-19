@@ -26,7 +26,7 @@ var editorInstance = ace.edit('editor');
 //   }
 // ]
 //
-// var mainMenu = Menu.buildFromTemplate(template);
+// var magit inMenu = Menu.buildFromTemplate(template);
 // Menu.setApplicationMenu(mainMenu);
 
 function openHandler () {
