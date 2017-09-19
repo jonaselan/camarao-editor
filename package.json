@@ -3,6 +3,7 @@
   "productName": "Camarao",
   "version": "0.0.0",
   "description": "My pioneering app",
+  "main": "main.js",
   "license": "MIT",
   "repository": "jonaselan/camarao",
   "author": {
@@ -25,6 +26,7 @@
     "electron"
   ],
   "dependencies": {
+    "marked": "^0.3.6",
     "electron-debug": "^1.0.0"
   },
   "devDependencies": {

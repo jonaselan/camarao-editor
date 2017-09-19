@@ -21,7 +21,7 @@ function createMainWindow() {
 		height: 400
 	});
 
-	win.loadURL(`file://${__dirname}/index.html`);
+	win.loadURL(`file://${__dirname}/views/index.html`);
 	win.on('closed', onClosed);
 
 	return win;
