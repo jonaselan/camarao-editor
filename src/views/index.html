@@ -5,10 +5,31 @@
       <link rel="stylesheet" href="../stylesheets/index.css">
     </head>
     <body>
-        <div id="editor">// welcome to Camarão Editor</div>
+        <div id="editor">
+    # for more infos about Potigol access http://potigol.github.io/
+    escreva "Jogo Maior Menor"
+    escreva "Pense em um número entre 1 e 100."
+    var menor := 1
+    var maior := 100
+    escreva "O número é maior, menor ou igual a 50?"
+    var resposta := leia_texto
+    enquanto resposta <> "igual" faça
+      metade = (maior + menor) div 2
+      se resposta == "maior" então
+        menor := metade
+      senãose resposta == "menor" então
+        maior := metade
+      senão
+        escreva "Não entendi."
+      fim
+      escreva "O número é maior, menor ou igual a {(maior + menor) div 2}?"
+      resposta := leia_texto
+    fim
+    escreva "Consegui!"
+        </div>
     </body>
 		<script src="../lib/ace.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../lib/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/mode-potigol.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../lib/theme-twilight.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" charset="utf-8">require('../javascripts/editor.js')</script>
 </html>

@@ -10,7 +10,7 @@ You'll need [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com/) inst
 
 ```bash
 $ git clone https://github.com/jonaselan/camarao-editor
-$ cd YOUR-DIRECTORY
+$ cd camarao-editor
 $ npm install
 $ npm start
 ```
@@ -23,6 +23,7 @@ $ npm run dev
 
 ## TODO
 
-- Make the menu for open/save files
-- Create tab option
-- Highlight for Potigol
+
+- [x] Highlight for Potigol
+- [ ] Make the menu for open/save files
+- [ ] Create tab option
