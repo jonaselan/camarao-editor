@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "electron .",
+    "test": "electron . --dev",
     "build": "electron-packager . --out=dist --asar --overwrite --all"
   },
   "keywords": [

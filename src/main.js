@@ -4,14 +4,14 @@ const {app, globalShortcut, BrowserWindow } = require('electron');
 require('electron-debug')();
 
 // prevent window being garbage collected
-let mainWindow;
+let win;
 
-function createMainWindow() {
+function createwin() {
 	const win = new BrowserWindow({
 		width: 600,
 		height: 400,
 		x: 200,
-		y: 200	
+		y: 200
 	});
 
 	win.loadURL(`file://${__dirname}/views/index.html`);
@@ -21,9 +21,14 @@ function createMainWindow() {
 		win.isMaximized() ? win.unmaximize() : win.maximize()
 	})
 
-	globalShortcut.register('Alt+1', () => {
+	globalShortcut.register('CommandOrControl+2', () => {
 		console.log('Alt key pressed');
 	})
+
+	// open chrome debugger if --dev is specified
+	if (process.argv.indexOf('--dev') !== -1) {
+			win.openDevTools();
+	}
 
 	return win;
 }
@@ -31,7 +36,7 @@ function createMainWindow() {
 function onClosed() {
 	// dereference the window
 	// for multiple windows store them in an array
-	mainWindow = null;
+	win = null;
 }
 
 app.on('window-all-closed', () => {
@@ -41,11 +46,11 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
-	if (!mainWindow) {
-		mainWindow = createMainWindow();
+	if (!win) {
+		win = createwin();
 	}
 });
 
 app.on('ready', () => {
-	mainWindow = createMainWindow();
+	win = createwin();
 });
