@@ -7,6 +7,7 @@ require('electron-debug')();
 let win;
 
 function createwin() {
+	// create a browser window for the UI
 	const win = new BrowserWindow({
 		width: 600,
 		height: 400,

@@ -17,12 +17,13 @@ $ npm start
 
 For easier developing you can launch the app with DevTools open:
 
-```bash
+```
 $ npm test
 ```
 
 ## TODO
 
 - [x] Highlight for Potigol
-- [ ] Make the menu for open/save files
+- [x] Make the menu for open/save files
 - [ ] Create tab option
+- [ ] Add icon

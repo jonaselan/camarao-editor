@@ -13,6 +13,7 @@ let file;
 
 // bind functions to native menus
 ipcRenderer.on('save', save);
+ipcRenderer.on('open', (event, file) => open(file));
 
 function save() {
   const write = (file) => {
@@ -34,6 +35,38 @@ function save() {
       write(file);
     })
   }
+}
+
+function open(fileToOpen) {
+  const doOpen = (file) => {
+    fs.readFile(file, 'utf8', (error, contents) => {
+      console.log('contents', contents);
+
+      if (error) {
+        new Notification('Camarão Editor', { body: `Could not open ${file} : ${error}` });
+      } else {
+        document.title = `Camarão Editor | ${file}`
+        // app.addRecentDocument(file); // add to the native OS recent documents list in the dock
+        editor.setValue(contents);
+      }
+    });
+  };
+
+  if (fileToOpen) {
+    doOpen(fileToOpen);
+  } else {
+    getFile().then(doOpen)
+  }
+}
+
+function getFile() {
+  return new Promise((resolve, reject) => {
+    dialog.showOpenDialog({ properties: [ 'openFile' ] }, selectedFile => {
+      if (selectedFile && selectedFile[0]) {
+        resolve(selectedFile[0]);
+      }
+    });
+  });
 }
 
 editor.setTheme('ace/theme/twilight');
