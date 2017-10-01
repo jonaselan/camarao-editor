@@ -33,7 +33,7 @@ function createwin() {
 	// If remove this template, will work normally with the default native menus
 	template = [
 			require('./javascripts/menus/main')(app),
-			// require('./javascripts/menus/file'),
+			require('./javascripts/menus/file')(win),
 			require('./javascripts/menus/view'),
 			require('./javascripts/menus/edit')
 	];

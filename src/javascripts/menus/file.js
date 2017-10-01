@@ -1,10 +1,10 @@
-module.exports = () => {
+module.exports = (mainWindow) => {
   return {
     label: 'File',
     submenu: [{
-      label: 'Open...',
-      accelerator: 'CommandOrControl+O',
-      click: () => console.log('process');
+      label: 'Save',
+      accelerator: 'CommandOrControl+S',
+      click: () => mainWindow.webContents.send('save')
     }]
   };
 };
