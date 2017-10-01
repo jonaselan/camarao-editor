@@ -1,4 +1,4 @@
-const {app, globalShortcut, BrowserWindow } = require('electron');
+const {app, globalShortcut, BrowserWindow, Menu } = require('electron');
 
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
@@ -10,7 +10,7 @@ function createwin() {
 	const win = new BrowserWindow({
 		width: 600,
 		height: 400,
-		x: 200,
+		x: 10,
 		y: 200
 	});
 
@@ -25,10 +25,21 @@ function createwin() {
 		console.log('Alt key pressed');
 	})
 
-	// open chrome debugger if --dev is specified
+	// open chrome debugger if --dev (npm test) is specified
 	if (process.argv.indexOf('--dev') !== -1) {
 			win.openDevTools();
 	}
+
+	// If remove this template, will work normally with the default native menus
+	template = [
+			require('./javascripts/menus/main')(app),
+			// require('./javascripts/menus/file'),
+			require('./javascripts/menus/view'),
+			require('./javascripts/menus/edit')
+	];
+
+	menu = Menu.buildFromTemplate(template);
+	Menu.setApplicationMenu(menu);
 
 	return win;
 }
