@@ -2,33 +2,14 @@
   <head>
 		<meta charset="utf-8">
 		<title>Camarão Editor</title>
-    <link rel="stylesheet" href="../stylesheets/index.css">
+    <link rel="stylesheet" href="../../node_modules/electron-tabs/electron-tabs.css">
   </head>
   <body>
-    <div id="editor"># for more infos about Potigol access http://potigol.github.io/
-escreva "Jogo Maior Menor"
-escreva "Pense em um número entre 1 e 100."
-var menor := 1
-var maior := 100
-escreva "O número é maior, menor ou igual a 50?"
-var resposta := leia_texto
-enquanto resposta <> "igual" faça
-  metade = (maior + menor) div 2
-  se resposta == "maior" então
-    menor := metade
-  senãose resposta == "menor" então
-    maior := metade
-  senão
-    escreva "Não entendi."
-  fim
-  escreva "O número é maior, menor ou igual a {(maior + menor) div 2}?"
-  resposta := leia_texto
-fim
-escreva "Consegui!"
+    <div class="etabs-tabgroup">
+      <div class="etabs-tabs"></div>
+      <div class="etabs-buttons"></div>
     </div>
+    <div class="etabs-views"></div>
   </body>
-	<script src="../lib/ace.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../lib/mode-potigol.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../lib/theme-twilight.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript" charset="utf-8">require('../javascripts/editor.js')</script>
+  <script src="../javascripts/tabs.js"></script>
 </html>

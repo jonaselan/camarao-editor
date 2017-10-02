@@ -1,15 +1,14 @@
 html,
 body {
-	padding: 0;
-	margin: 0;
-	background: black;
+	/*padding: 0;
+	margin: 0;*/
 	font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 #editor {
-	position: static;
-	width: 500px;
-	height: 500px;
+	/*position: static;*/
+	/*width: 500px;
+	height: 500px;*/
 }
 
 .container {

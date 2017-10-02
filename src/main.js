@@ -14,7 +14,7 @@ function createwin() {
 		x: 10,
 		y: 200
 	});
-
+	// and load the index.html of the app.
 	win.loadURL(`file://${__dirname}/views/index.html`);
 	win.on('closed', onClosed);
 
@@ -33,10 +33,10 @@ function createwin() {
 
 	// If remove this template, will work normally with the default native menus
 	template = [
-			require('./javascripts/menus/main')(app),
-			require('./javascripts/menus/file')(win),
-			require('./javascripts/menus/view'),
-			require('./javascripts/menus/edit')
+		require('./javascripts/menus/main')(app),
+		require('./javascripts/menus/file')(win),
+		require('./javascripts/menus/view'),
+		require('./javascripts/menus/edit')
 	];
 
 	menu = Menu.buildFromTemplate(template);
@@ -51,6 +51,7 @@ function onClosed() {
 	win = null;
 }
 
+// Quit when all windows are closed.
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
 		app.quit();
@@ -58,11 +59,16 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
+	// On macOS it's common to re-create a window in the app when the
+  // dock icon is clicked and there are no other windows open.
 	if (!win) {
 		win = createwin();
 	}
 });
 
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
 app.on('ready', () => {
 	win = createwin();
 });

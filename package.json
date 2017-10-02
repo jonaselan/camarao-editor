@@ -21,7 +21,9 @@
     "electron"
   ],
   "dependencies": {
-    "electron-debug": "^1.0.0"
+    "dragula": "^3.7.2",
+    "electron-debug": "^1.0.0",
+    "electron-tabs": "^0.7.2"
   },
   "devDependencies": {
     "devtron": "^1.1.0",
