@@ -3,12 +3,16 @@
 const {remote, Menu, ipcRenderer} = require('electron');
 const dialog = remote.dialog; // access native file picker dialog
 var fs = require('fs');
-
-var currentWindow  = remote.getCurrentWindow();
-var JavaScriptMode = ace.require('ace/mode/potigol').Mode;
+// var JavaScriptMode = ace.require('ace/mode/potigol').Mode;
 
 // keep track of the open file and editor
-let editor = ace.edit('editor');
+// let editor = ace.edit('editor');
+// var editor = CodeMirror(document.getElementById("editor"), {
+//   value: "# Olá :)",
+//   lineNumbers: true,
+//   mode: "text/x-potigol"
+// });
+
 let file;
 
 // bind functions to native menus
@@ -41,6 +45,7 @@ function open(fileToOpen) {
   const doOpen = (file) => {
     fs.readFile(file, 'utf8', (error, contents) => {
       console.log('contents', contents);
+      console.log(editor);
 
       if (error) {
         new Notification('Camarão Editor', { body: `Could not open ${file} : ${error}` });
@@ -69,5 +74,5 @@ function getFile() {
   });
 }
 
-editor.setTheme('ace/theme/twilight');
-editor.session.setMode(new JavaScriptMode());
+// editor.setTheme('ace/theme/twilight');
+// editor.session.setMode(new JavaScriptMode());

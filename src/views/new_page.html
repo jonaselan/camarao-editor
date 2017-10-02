@@ -3,13 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../stylesheets/index.css">
+    <link rel="stylesheet" href="../stylesheets/codemirror.css">
   </head>
   <body>
     <div id="editor"></div>
   </body>
-  <script src="../lib/ace.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../lib/mode-potigol.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../lib/theme-twilight.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript" charset="utf-8">require('../javascripts/editor.js')</script>
+  <script src="../javascripts/codemirror.js"></script>
+  <script src="../lib/potigol.js"></script>
+  <script>
+    var editor = CodeMirror(document.getElementById("editor"), {
+      value: "# Olá :)",
+      lineNumbers: true,
+      mode: "text/x-potigol"
+    });
+  </script>
+  <!-- <script type="text/javascript" charset="utf-8">require('../javascripts/editor.js')</script> -->
 </html>
