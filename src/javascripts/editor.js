@@ -7,10 +7,10 @@ var fs = require('fs');
 
 // keep track of the open file and editor
 // let editor = ace.edit('editor');
-// var editor = CodeMirror(document.getElementById("editor"), {
+// const editor = CodeMirror(document.getElementById("editor"), {
 //   value: "# Olá :)",
 //   lineNumbers: true,
-//   mode: "text/x-potigol"
+//   mode: "text/x-potigol",
 // });
 
 let file;
