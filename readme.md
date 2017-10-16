@@ -25,5 +25,7 @@ $ npm test
 
 - [x] Highlight for Potigol
 - [x] Make the menu for open/save files
-- [ ] Create tab option
+- [x] Create tab option*
 - [ ] Add icon
+
+ '*' The tabs implementation was done in the branch [tab](https://github.com/jonaselan/camarao-editor/tree/tabs), but in this case it occurred a issue with save/open option. Btw, feel free to fix that :)
