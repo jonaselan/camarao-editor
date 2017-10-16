@@ -28,4 +28,4 @@ $ npm test
 - [x] Create tab option*
 - [ ] Add icon
 
- '*' The tabs implementation was done in the branch [tab](https://github.com/jonaselan/camarao-editor/tree/tabs), but in this case it occurred a issue with save/open option. Btw, feel free to fix that :)
+ '*' The tabs implementation was done in the branch [tab](https://github.com/jonaselan/camarao-editor/tree/tabs) with [CodeMirror](https://github.com/codemirror/CodeMirror), but in this case it occurred a issue with save/open option. Btw, feel free to fix that :)
